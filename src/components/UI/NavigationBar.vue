@@ -14,12 +14,13 @@
           <a href="#" class="nav-item nav-link text-secondary">Blog</a>
           <a href="#" class="nav-item nav-link text-secondary">Contact</a>
         </ul>
-        <button
-          type="button"
-          class="btn btn-outline-secondary btn-md nav-button"
+        <base-button
+          button-title="Get It Now"
+          :button="false"
+          custom-class="nav-button outline"
         >
-          Get It Now
-        </button>
+          <template #content> Get It Now </template>
+        </base-button>
       </div>
     </div>
   </nav>

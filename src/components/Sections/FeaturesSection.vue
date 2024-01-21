@@ -11,83 +11,61 @@
     <template #sectionBody>
       <div class="col-12">
         <div class="row g-4">
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-cloud-upload"></i>
-                <h3 class="text-tertiary">Push To Deploy</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-lock"></i>
-                <h3 class="text-tertiary">SSL Certificates</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-reload"></i>
-                <h3 class="text-tertiary">Simple Queues</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-shield"></i>
-                <h3 class="text-tertiary">Advanced Security</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-cog"></i>
-                <h3 class="text-tertiary">Powerful API</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card p-3 feature-card">
-              <div class="card-body d-flex flex-column align-items-start gap-2">
-                <i class="lni icon-badge mb-4 lni-layers"></i>
-                <h3 class="text-tertiary">Database Backups</h3>
-                <p class="text-black-50">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page at its layout.
-                </p>
-              </div>
-            </div>
+          <div v-for="(card, index) in cardsData" :key="index" class="col-4">
+            <feature-section-card
+              :heading="card.heading"
+              :paragraph="card.paragraph"
+              :icon="card.icon"
+            ></feature-section-card>
           </div>
         </div>
       </div>
     </template>
   </base-section>
 </template>
+<script setup>
+import { ref } from "vue";
+import FeatureSectionCard from "../FeatureSectionCard.vue";
+
+const cardsData = ref([
+  {
+    heading: "Push To Deploy",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "cloud-upload",
+  },
+  {
+    heading: "SSL Certificates",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "lock",
+  },
+  {
+    heading: "Simple Queues",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "reload",
+  },
+  {
+    heading: "Advanced Security",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "shield",
+  },
+  {
+    heading: "Powerful API",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "cog",
+  },
+  {
+    heading: "Database Backups",
+    paragraph:
+      " It is a long established fact that a reader will be distracted by the readable content of a page at its layout.",
+    icon: "layers",
+  },
+]);
+</script>
 
 <style>
 .feature-card {

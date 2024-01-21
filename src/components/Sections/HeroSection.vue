@@ -12,16 +12,26 @@
             test, and monitor apps.
           </p>
           <div>
-            <button class="btn btn-secondary apple-store-btn hero-button">
-              <i class="lni lni-apple-brand"></i>
-              App Store
-            </button>
-            <button
-              class="btn btn-outline-secondary google-play-btn hero-button"
+            <base-button
+              :button="false"
+              button-title="Go to App Store"
+              custom-class="hero-button regular"
             >
-              <i class="lni lni-play-store"></i>
-              Google Play
-            </button>
+              <template #content>
+                <i class="lni lni-apple-brand"></i>
+                App Store
+              </template>
+            </base-button>
+            <base-button
+              :button="false"
+              button-title="Go to Google Play"
+              custom-class="hero-button outline"
+            >
+              <template #content>
+                <i class="lni lni-play-store"></i>
+                Google Play
+              </template>
+            </base-button>
           </div>
         </div>
       </div>
@@ -38,19 +48,6 @@
 
 .hero-img {
   width: 58%;
-}
-
-.google-play-btn:hover {
-  color: #ff6b81;
-}
-
-.apple-store-btn {
-  color: #ff6b81;
-  border: transparent;
-}
-.apple-store-btn:hover {
-  background-color: black;
-  color: #fff;
 }
 
 .col > div:has(.hero-button) {
