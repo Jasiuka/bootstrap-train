@@ -61,6 +61,6 @@ defineProps({
 }
 
 .app-info__img {
-  width: 85%;
+  width: 80%;
 }
 </style>

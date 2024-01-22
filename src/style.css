@@ -137,3 +137,7 @@ button:focus-visible {
 .lni-layout::before {
   content: "\eb29";
 }
+
+.lni-checkmark-circle::before {
+  content: "\ead2";
+}

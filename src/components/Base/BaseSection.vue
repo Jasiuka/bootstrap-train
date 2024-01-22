@@ -13,7 +13,7 @@
             <h2 class="text-tertiary fw-bold section-title__subtitle mb-4">
               <slot name="headerSub"></slot>
             </h2>
-            <span class="text-black-50"
+            <span :class="paragraphWhite ? 'text-secondary' : 'text-black-50'"
               ><slot name="headerParagraph"></slot
             ></span>
           </div>
@@ -43,6 +43,10 @@ defineProps({
   lgContainer: {
     type: Boolean,
     required: true,
+  },
+  paragraphWhite: {
+    type: Boolean,
+    required: false,
   },
 });
 </script>

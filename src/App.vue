@@ -3,6 +3,8 @@ import NavigationBar from "./components/UI/NavigationBar.vue";
 import HeroSection from "./components/Sections/HeroSection.vue";
 import FeaturesSection from "./components/Sections/FeaturesSection.vue";
 import AppInfoSection from "./components/Sections/AppInfoSection.vue";
+import AchievementsSection from "./components/Sections/AchievementsSection.vue";
+import PricingSection from "./components/Sections/PricingSection.vue";
 </script>
 
 <template>
@@ -14,6 +16,8 @@ import AppInfoSection from "./components/Sections/AppInfoSection.vue";
       <hero-section></hero-section>
       <features-section></features-section>
       <app-info-section></app-info-section>
+      <achievements-section></achievements-section>
+      <pricing-section></pricing-section>
     </main>
   </div>
 </template>

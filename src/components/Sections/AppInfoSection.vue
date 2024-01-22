@@ -59,6 +59,6 @@ const appInfoData = ref([
 }
 
 .items-container {
-  gap: 6rem;
+  gap: 8rem;
 }
 </style>
