@@ -1,9 +1,10 @@
 <template>
   <base-section
-    :lg-container="false"
     custom-section-class="achievements bg-primary text-secondary"
     :header="true"
     :paragraph-white="true"
+    :title-padding="false"
+    :smaller-title-margin="true"
   >
     <template #headerSub> Trusted by developers from over 80 planets </template>
     <template #headerParagraph>

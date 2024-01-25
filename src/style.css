@@ -141,3 +141,15 @@ button:focus-visible {
 .lni-checkmark-circle::before {
   content: "\ead2";
 }
+
+.lni-linkedin-original::before {
+  content: "\ebe7";
+}
+
+.lni-twitter-original::before {
+  content: "\eb9c";
+}
+
+.lni-plus::before {
+  content: "\eab8";
+}

@@ -66,21 +66,3 @@ const cardsData = ref([
   },
 ]);
 </script>
-
-<style>
-.feature-card {
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  box-shadow: 0px 10px 9px -4px rgba(0, 0, 0, 0.1);
-  transform: translateY(-7px);
-}
-
-.feature-card > .card-body > h3 {
-  font-weight: 500;
-  font-size: 1.2rem;
-  font-family: inter, sans-serif;
-}
-</style>

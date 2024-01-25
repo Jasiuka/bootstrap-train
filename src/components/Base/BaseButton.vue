@@ -38,6 +38,7 @@ defineProps({
   transition: all 0.3s ease;
   border-radius: 6px;
   text-decoration: none;
+  text-align: center;
 }
 
 .outline,
@@ -81,5 +82,16 @@ defineProps({
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
+}
+
+.black-style,
+.black-style:link,
+.black-style:visited {
+  background-color: black;
+  color: #fff;
+}
+
+.black-style:hover {
+  background-color: var(--color-primary);
 }
 </style>
