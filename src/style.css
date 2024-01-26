@@ -153,3 +153,7 @@ button:focus-visible {
 .lni-plus::before {
   content: "\eab8";
 }
+
+.lni-minus::before {
+  content: "\eabc";
+}

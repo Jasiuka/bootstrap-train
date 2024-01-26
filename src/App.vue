@@ -9,6 +9,8 @@ import TeamSection from "./components/Sections/TeamSection.vue";
 import TestimonialsSection from "./components/Sections/TestimonialsSection.vue";
 import CtaSection from "./components/Sections/CtaSection.vue";
 import faqSection from "./components/Sections/faqSection.vue";
+import BlogsSection from "./components/Sections/BlogsSection.vue";
+import ClientsSection from "./components/Sections/ClientsSection.vue";
 </script>
 
 <template>
@@ -26,6 +28,8 @@ import faqSection from "./components/Sections/faqSection.vue";
       <testimonials-section></testimonials-section>
       <cta-section></cta-section>
       <faq-section></faq-section>
+      <blogs-section></blogs-section>
+      <clients-section></clients-section>
     </main>
   </div>
 </template>
