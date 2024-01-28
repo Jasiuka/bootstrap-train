@@ -80,3 +80,23 @@ that it has"`,
   },
 ]);
 </script>
+
+<style>
+section .carousel-indicators {
+  gap: 0.3rem;
+}
+
+section .carousel-indicators [data-bs-target] {
+  background-color: black;
+  width: 0.8rem;
+  border-radius: 6px;
+  height: 0.35rem;
+  opacity: 1;
+  border: none;
+}
+
+section .carousel-indicators [data-bs-target].active {
+  background-color: var(--color-primary);
+  width: 1.6rem;
+}
+</style>

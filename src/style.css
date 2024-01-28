@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
   font-family: Inter, sans-serif;
   background-color: #f9f9f9 !important;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -156,4 +157,24 @@ button:focus-visible {
 
 .lni-minus::before {
   content: "\eabc";
+}
+
+.lni-facebook::before {
+  content: "\ec15";
+}
+
+.lni-instagram::before {
+  content: "\ebf9";
+}
+
+.lni-youtube::before {
+  content: "\eb85";
+}
+
+.lni-pinterest::before {
+  content: "\ebc7";
+}
+
+.lni-chevron-up::before {
+  content: "\eb0b";
 }

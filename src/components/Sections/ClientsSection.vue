@@ -10,7 +10,12 @@
             :key="index"
             :style="{ transform: `translateX(${translateValue}px)` }"
           >
-            <img :src="client.logo" class="client-logo" alt="Client logo" />
+            <img
+              ref="logo"
+              :src="client.logo"
+              class="client-logo"
+              alt="Client logo"
+            />
           </div>
         </div>
       </div>
@@ -19,8 +24,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const translateValue = ref(0);
+const logo = ref([]);
 
 const clientsData = ref([
   {
@@ -42,16 +48,52 @@ const clientsData = ref([
   {
     logo: "/src/assets/brands/brand2.svg",
   },
+  {
+    logo: "/src/assets/brands/lineicons-logo.svg",
+  },
+  {
+    logo: "/src/assets/brands/pagebulb-logo.svg",
+  },
+  {
+    logo: "/src/assets/brands/brand2.svg",
+  },
+  {
+    logo: "/src/assets/brands/lineicons-logo.svg",
+  },
+  {
+    logo: "/src/assets/brands/pagebulb-logo.svg",
+  },
+  {
+    logo: "/src/assets/brands/brand2.svg",
+  },
 ]);
+
+const animation = function () {
+  const logoWidth = logo.value[0].offsetWidth;
+  const moveValue = -logoWidth;
+  const limit = -logoWidth * (clientsData.value.length - 3);
+  setInterval(() => {
+    translateValue.value = translateValue.value + moveValue;
+    if (translateValue.value === limit) {
+      translateValue.value = 0;
+    }
+  }, 3000);
+};
+
+onMounted(() => {
+  animation();
+});
 </script>
 
 <style scoped>
 section {
   overflow: hidden;
+  background-color: white;
 }
 .client-logo {
-  width: 12rem;
+  width: 20rem;
   filter: grayscale(0.8);
+  padding: 0 4rem;
   transition: all 0.3s ease;
 }
 
@@ -59,7 +101,7 @@ section {
   filter: grayscale(0);
 }
 
-.client-carousel__inner {
-  gap: 9.5rem;
+.client-carousel__item {
+  transition: all 0.5s ease;
 }
 </style>

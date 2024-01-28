@@ -8,8 +8,8 @@
     </div>
     <div class="col-12 d-flex justify-content-center">
       <div class="d-flex flex-column align-items-center">
-        <img class="author-img rounded-circle" :src="userImg" />
-        <h4 class="user-name">{{ userName }}</h4>
+        <img class="author-img rounded-circle mb-3" :src="userImg" />
+        <h4 class="user-name m-0">{{ userName }}</h4>
         <p class="position">{{ userPosition }}</p>
       </div>
     </div>
@@ -44,6 +44,7 @@ defineProps({
 <style scoped>
 .brand {
   width: 9rem;
+  height: 5rem;
 }
 
 .main-content {
