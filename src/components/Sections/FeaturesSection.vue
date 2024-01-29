@@ -11,7 +11,12 @@
     <template #sectionBody>
       <div class="col-12">
         <div class="row g-4">
-          <div v-for="(card, index) in cardsData" :key="index" class="col-4">
+          <div
+            v-for="(card, index) in cardsData"
+            :key="index"
+            class="col-4 jump-in-element"
+            :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
+          >
             <feature-section-card
               :heading="card.heading"
               :paragraph="card.paragraph"

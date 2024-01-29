@@ -14,59 +14,92 @@ import ClientsSection from "./components/Sections/ClientsSection.vue";
 import TheFooter from "./components/UI/TheFooter.vue";
 import ScrollTopComponent from "./components/ScrollTopComponent.vue";
 import { useObserver } from "./composables/observer";
-import { onMounted, ref } from "vue";
+import TheLoader from "./components/TheLoader.vue";
+import { onMounted, onBeforeMount, ref } from "vue";
 
-const navNotIntersecting = ref(false);
+const navSticky = ref(false);
+const observerTargetSection = ref("hero");
+const loaded = ref(false);
 const handleIntersection = function (target) {
-  navNotIntersecting.value = false;
+  if (target.classList.contains("for-observer")) {
+    navSticky.value = false;
+  } else {
+    observerTargetSection.value = target.id;
+  }
 };
 
 const handleNotIntersecting = function (target) {
-  navNotIntersecting.value = true;
+  if (target.classList.contains("for-observer")) {
+    navSticky.value = true;
+  }
 };
 
 const { initObserver } = useObserver(
   handleIntersection,
   handleNotIntersecting,
-  "navigation"
+  ".for-observer, section[id]",
+  { threshold: 0.9, rootMargin: "0px" }
 );
 
 onMounted(() => {
   initObserver();
 });
+
+onBeforeMount(() => {
+  setTimeout(() => {
+    loaded.value = true;
+  }, 1500);
+});
 </script>
 
 <template>
   <div>
-    <header
-      class="container-fluid pt-3"
-      :class="navNotIntersecting.value ? 'position-absolute' : 'position-fixed'"
-    >
-      <navigation-bar></navigation-bar>
-    </header>
-    <main>
-      <hero-section id="hero"></hero-section>
-      <features-section id="features"></features-section>
-      <app-info-section id="overview"></app-info-section>
-      <achievements-section></achievements-section>
-      <pricing-section id="pricing"></pricing-section>
-      <team-section id="team"></team-section>
-      <testimonials-section></testimonials-section>
-      <cta-section></cta-section>
-      <faq-section></faq-section>
-      <blogs-section id="blog"></blogs-section>
-      <clients-section></clients-section>
-      <the-footer></the-footer>
-      <scroll-top-component
-        :visible="navNotIntersecting"
-      ></scroll-top-component>
-    </main>
+    <the-loader v-if="!loaded"></the-loader>
+    <div :class="{ hidden: !loaded }">
+      <header
+        class="container-fluid py-3 navigation-header"
+        :class="navSticky ? 'sticky' : ''"
+      >
+        <navigation-bar
+          :nav-sticky="navSticky"
+          :observed-section="observerTargetSection"
+        ></navigation-bar>
+      </header>
+      <div class="for-observer"></div>
+      <main>
+        <hero-section id="hero"></hero-section>
+        <features-section id="features"></features-section>
+        <app-info-section id="overview"></app-info-section>
+        <achievements-section></achievements-section>
+        <pricing-section id="pricing"></pricing-section>
+        <team-section id="team"></team-section>
+        <testimonials-section></testimonials-section>
+        <cta-section></cta-section>
+        <faq-section></faq-section>
+        <blogs-section id="blog"></blogs-section>
+        <clients-section></clients-section>
+        <the-footer></the-footer>
+        <scroll-top-component :visible="navSticky"></scroll-top-component>
+      </main>
+    </div>
   </div>
 </template>
 
 <style>
-header {
+.navigation-header {
   z-index: 100;
+  background-color: transparent;
+  position: absolute;
+  transition: background-color 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.sticky {
+  background-color: white;
+  position: fixed;
 }
 :root {
   --color-primary: #ff6b81;
@@ -107,5 +140,63 @@ section .card-common:hover {
 
 .brand-logo {
   width: 50%;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-2%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(2%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes jumpIn {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 </style>

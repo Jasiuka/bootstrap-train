@@ -1,6 +1,6 @@
 <template>
   <div class="card p-0 card-common">
-    <img class="card-img-top" :src="img" />
+    <img class="card-img-top" :src="img" :alt="name + 'photo'" />
     <div class="card-body p-4">
       <div class="row d-flex align-items-center">
         <div class="col d-flex flex-column">

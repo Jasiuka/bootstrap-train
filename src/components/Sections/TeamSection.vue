@@ -12,7 +12,12 @@
     >
     <template #sectionBody>
       <div class="row container-lg">
-        <div v-for="(member, index) in teamData" :key="index" class="col">
+        <div
+          v-for="(member, index) in teamData"
+          :key="index"
+          class="col jump-in-element"
+          :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
+        >
           <team-card
             :name="member.name"
             :position="member.position"

@@ -1,14 +1,18 @@
 <template>
   <div class="card p-0 overflow-hidden blog-card">
     <div class="overflow-hidden">
-      <img class="card-img-top blog-img" :src="blogImg" />
+      <img class="card-img-top blog-img" :src="blogImg" :alt="title" />
     </div>
     <div class="card-body d-flex flex-column blog-card__body">
       <h4 class="tag text-primary">{{ tag }}</h4>
       <h3 class="title mb-3">{{ title }}</h3>
       <p class="description text-black-50 mb-4">{{ description }}</p>
       <div class="author d-flex align-items-center gap-3">
-        <img class="author-img rounded-circle" :src="authorImg" />
+        <img
+          class="author-img rounded-circle"
+          :src="authorImg"
+          :alt="authorName + 'photo'"
+        />
         <div class="author-details text-black-50">
           <h5 class="author-name mb-1">{{ authorName }}</h5>
           <p class="m-0">

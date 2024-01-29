@@ -14,7 +14,7 @@
               ref="logo"
               :src="client.logo"
               class="client-logo"
-              alt="Client logo"
+              alt="Client brand logo"
             />
           </div>
         </div>

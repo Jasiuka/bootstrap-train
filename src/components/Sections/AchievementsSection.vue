@@ -15,15 +15,24 @@
       <div
         class="container-lg d-flex justify-content-center achievements_items mt-3"
       >
-        <div>
+        <div
+          class="jump-in-element"
+          :style="{ opacity: 0, 'animation-delay': `0.0s` }"
+        >
           <h3 class="fs-1 fw-bolder">100%</h3>
           <p>Satisfaction</p>
         </div>
-        <div>
+        <div
+          class="jump-in-element"
+          :style="{ opacity: 0, 'animation-delay': `0.1s` }"
+        >
           <h3 class="fs-1 fw-bolder">120K</h3>
           <p>Happy Users</p>
         </div>
-        <div>
+        <div
+          class="jump-in-element"
+          :style="{ opacity: 0, 'animation-delay': `0.2s` }"
+        >
           <h3 class="fs-1 fw-bolder">125k+</h3>
           <p>Downloads</p>
         </div>

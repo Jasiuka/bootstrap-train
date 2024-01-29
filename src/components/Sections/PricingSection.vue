@@ -8,7 +8,12 @@
     >
     <template #sectionBody>
       <div class="row container-lg">
-        <div class="col" v-for="(card, index) in pricingData" :key="index">
+        <div
+          class="col jump-in-element"
+          :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
+          v-for="(card, index) in pricingData"
+          :key="index"
+        >
           <pricing-card
             :card-title="card.title"
             :button-text="`Buy ${card.title}`"

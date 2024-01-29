@@ -6,7 +6,7 @@
           <img
             src="/src/assets/white-logo.svg"
             class="brand-logo"
-            alt="company logo"
+            alt="Appvilla logo"
           />
           <p>
             Making the world a better place through constructing elegant
@@ -18,6 +18,7 @@
               href="#"
               v-for="social in socials"
               :key="social"
+              :title="social.split('-')[1]"
             >
               <i class="lni" :class="social"></i>
             </a>
@@ -39,7 +40,7 @@
                 :key="link + index"
                 class="footer-link"
               >
-                <a class="btn" href="#">{{ link }}</a>
+                <a class="btn" href="#" :title="link">{{ link }}</a>
               </li>
             </ul>
           </div>

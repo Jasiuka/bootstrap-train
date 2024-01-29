@@ -7,7 +7,12 @@
   >
     <slot name="content"></slot>
   </button>
-  <a v-else class="common" :href="special ? special : '#'" :class="customClass"
+  <a
+    v-else
+    class="common"
+    :href="special ? special : '#'"
+    :class="customClass"
+    :title="buttonTitle"
     ><slot name="content"></slot
   ></a>
 </template>

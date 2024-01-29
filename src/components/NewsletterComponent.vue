@@ -8,7 +8,12 @@
         </p>
       </div>
       <form class="newsletter-form ms-auto d-flex align-items-center gap-2">
-        <input type="text" placeholder="Your email address" />
+        <input
+          type="text"
+          placeholder="Your email address"
+          name="email"
+          autocomplete="true"
+        />
         <base-button :button="true" button-title="Subscribe">
           <template #content> Subscribe </template>
         </base-button>

@@ -8,7 +8,7 @@
       <div
         class="container-lg d-flex align-items-center flex-column items-container"
       >
-        <div v-for="(appInfo, index) in appInfoData" :key="index" class="row">
+        <div v-for="(appInfo, index) in appInfoData" :key="index">
           <app-info-component
             :heading="appInfo.heading"
             :button-text="appInfo.buttonText"

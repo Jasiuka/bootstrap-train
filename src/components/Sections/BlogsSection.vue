@@ -8,7 +8,12 @@
     </template>
     <template #sectionBody>
       <div class="row">
-        <div class="col" v-for="(blog, index) in blogsData" :key="index">
+        <div
+          class="col jump-in-element"
+          v-for="(blog, index) in blogsData"
+          :key="index"
+          :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
+        >
           <blog-card
             :author-img="blog.authorImg"
             :blog-img="blog.blogImg"
