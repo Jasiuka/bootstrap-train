@@ -199,4 +199,10 @@ section .card-common:hover {
     opacity: 1;
   }
 }
+
+@media (max-width: 992px) {
+  .section-title {
+    padding: 0;
+  }
+}
 </style>

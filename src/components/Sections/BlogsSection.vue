@@ -9,7 +9,7 @@
     <template #sectionBody>
       <div class="row">
         <div
-          class="col jump-in-element"
+          class="col-md-6 mb-md-3 mb-lg-0 col-lg jump-in-element"
           v-for="(blog, index) in blogsData"
           :key="index"
           :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"

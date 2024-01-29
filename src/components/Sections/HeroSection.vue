@@ -1,6 +1,8 @@
 <template>
   <section class="container-fluid bg-primary section-hero section">
-    <div class="container-lg d-flex align-items-center h-100">
+    <div
+      class="container-lg d-flex align-items-center h-100 flex-column flex-lg-row"
+    >
       <div class="row">
         <div class="col pe-5 d-flex flex-column gap-4 hero-content">
           <h1 class="text-secondary heading">
@@ -38,7 +40,11 @@
           </div>
         </div>
       </div>
-      <img class="hero-img" src="/src/assets/phone.png" alt="Hero section image" />
+      <img
+        class="hero-img"
+        src="/src/assets/phone.png"
+        alt="Hero section image"
+      />
     </div>
   </section>
 </template>
@@ -73,5 +79,17 @@
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content > * {
+    text-wrap: balance;
+    text-align: center;
+  }
 }
 </style>

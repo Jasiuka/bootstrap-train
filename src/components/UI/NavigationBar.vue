@@ -9,19 +9,32 @@
             alt="Appvilla logo"
           />
         </a>
-        <ul class="navbar-nav nav-list">
-          <li v-for="link in links" :key="link.identifier">
-            <a
-              :href="link.href"
-              class="nav-item nav-link"
-              :class="[
-                `text-${navSticky ? 'tertiary' : 'secondary'}`,
-                { 'link-active': link.identifier === observedSection },
-              ]"
-              >{{ link.text }}</a
-            >
-          </li>
-        </ul>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobileMenu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mobileMenu">
+          <ul class="navbar-nav nav-list">
+            <li v-for="link in links" :key="link.identifier">
+              <a
+                :href="link.href"
+                class="nav-item nav-link"
+                :class="[
+                  `text-${navSticky ? 'tertiary' : 'secondary'}`,
+                  { 'link-active': link.identifier === observedSection },
+                ]"
+                >{{ link.text }}</a
+              >
+            </li>
+          </ul>
+        </div>
         <base-button
           button-title="Get It Now"
           :button="false"
@@ -62,6 +75,9 @@ defineProps({
 </script>
 
 <style scoped>
+.navigation {
+  position: relative;
+}
 .nav-button {
   font-weight: 600;
   padding: 0.7rem 1.5rem;
@@ -89,5 +105,26 @@ defineProps({
 
 .link-active {
   color: var(--color-primary);
+}
+
+@media (max-width: 992px) {
+  .navigation .navbar-collapse {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    top: 125%;
+    padding: 2rem;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+  }
+
+  .brand-logo {
+    width: 10rem;
+  }
+
+  .navigation .navbar-collapse .nav-list .nav-item {
+    color: #081828 !important;
+  }
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="col-12 d-flex align-items-center gap-4 fade-in-element"
+    class="col-12 d-flex align-items-center gap-4 fade-in-element flex-md-column flex-row"
     :class="reversed ? 'flex-row-reverse' : 'flex-row'"
   >
-    <div class="col-6" style="opacity: 0">
+    <div class="col-12 col-lg-6" style="opacity: 0">
       <div class="d-flex flex-column align-items-start gap-4">
         <i :class="`lni-${icon}`" class="lni lni-inbox mb-2 icon-badge"></i>
         <h3 class="fs-2 fw-bold">{{ heading }}</h3>

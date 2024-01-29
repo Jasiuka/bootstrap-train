@@ -68,4 +68,10 @@ defineProps({
 .position {
   font-size: 0.8rem;
 }
+
+@media (max-width: 992px) {
+  .main-content {
+    padding: 0;
+  }
+}
 </style>

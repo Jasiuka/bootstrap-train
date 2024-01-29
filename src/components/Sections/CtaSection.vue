@@ -67,4 +67,15 @@
 .cta-paragraph {
   text-align: center;
 }
+
+@media (max-width: 992px) {
+  .cta-title {
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .cta-content {
+    padding: 0;
+  }
+}
 </style>

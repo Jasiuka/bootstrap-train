@@ -13,7 +13,7 @@
     </template>
     <template #sectionBody>
       <div
-        class="container-lg d-flex justify-content-center achievements_items mt-3"
+        class="container-lg d-flex flex-column flex-sm-row justify-content-center achievements_items mt-3"
       >
         <div
           class="jump-in-element"
@@ -50,5 +50,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 576px) {
+  .achievements_items {
+    gap: 2rem;
+  }
 }
 </style>

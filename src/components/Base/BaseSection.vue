@@ -3,7 +3,7 @@
     class="section d-flex justify-content-center"
     :class="[customSectionClass]"
   >
-    <div class="row container-lg">
+    <div class="row container-lg container-md-fluid">
       <div
         v-if="header"
         :class="
@@ -162,5 +162,14 @@ onMounted(() => {
 
 .section-title__subtitle {
   font-weight: 800;
+}
+
+@media (max-width: 992px) {
+  .section-header__title,
+  .section-header__subtitle,
+  .section-header__paragraph {
+    text-wrap: balance;
+    text-align: center;
+  }
 }
 </style>
