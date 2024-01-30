@@ -10,7 +10,7 @@
           />
         </a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler mobile-menu__button"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mobileMenu"
@@ -126,5 +126,19 @@ defineProps({
   .navigation .navbar-collapse .nav-list .nav-item {
     color: #081828 !important;
   }
+
+  .navigation .navbar-collapse .nav-list .nav-item:hover {
+    color: var(--color-primary) !important;
+  }
+}
+
+.mobile-menu__button {
+  outline: none;
+}
+
+.mobile-menu__button:hover,
+.mobile-menu__button:focus {
+  color: var(--color-primary) !important;
+  border: none;
 }
 </style>

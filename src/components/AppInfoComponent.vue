@@ -1,9 +1,9 @@
 <template>
   <div
-    class="col-12 d-flex align-items-center gap-4 fade-in-element flex-md-column flex-row"
-    :class="reversed ? 'flex-row-reverse' : 'flex-row'"
+    class="col-12 d-flex align-items-center gap-4 fade-in-element flex-md-column"
+    :class="reversed ? 'flex-lg-row-reverse' : 'flex-lg-row'"
   >
-    <div class="col-12 col-lg-6" style="opacity: 0">
+    <div class="col-sm-12 col-md-12 col-lg-6" style="opacity: 0">
       <div class="d-flex flex-column align-items-start gap-4">
         <i :class="`lni-${icon}`" class="lni lni-inbox mb-2 icon-badge"></i>
         <h3 class="fs-2 fw-bold">{{ heading }}</h3>
@@ -19,7 +19,7 @@
         </base-button>
       </div>
     </div>
-    <div class="col-6" style="opacity: 0">
+    <div class="col-sm-12 col-md-12 col-lg-6" style="opacity: 0">
       <img class="app-info__img" :src="image" :alt="heading" />
     </div>
   </div>

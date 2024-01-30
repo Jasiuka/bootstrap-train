@@ -1,8 +1,10 @@
 <template>
   <base-section :header="false">
     <template #sectionBody>
-      <div class="row upper-row d-flex align-items-start">
-        <div class="col-4 d-flex flex-column gap-4">
+      <div class="row upper-row d-flex align-items-start flex-row">
+        <div
+          class="col-12 col-lg-4 d-flex flex-column align-items-center align-items-lg-start gap-4 mb-4 mb-lg-0"
+        >
           <img
             src="/src/assets/white-logo.svg"
             class="brand-logo"
@@ -25,7 +27,7 @@
           </div>
           <p class="designed">Designed by Uldeck and Developed by Jasiuka</p>
         </div>
-        <div class="col-8 d-flex align-items-center justify-content-between">
+        <div class="col-lg-8 d-flex align-items-center justify-content-between">
           <div
             v-for="navigationCol in navigationLinks"
             :key="navigationCol.heading"

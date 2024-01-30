@@ -1,13 +1,17 @@
 <template>
   <div class="card p-4 newsletter">
-    <div class="card-body d-flex align-items-center">
+    <div
+      class="card-body d-flex align-items-center gap-4 gap-lg-2 flex-column flex-lg-row"
+    >
       <div class="newsletter-text">
         <h4 class="fw-bold">Subscribe To Our Newsletter</h4>
         <p>
           The latest news, articles, and resources, sent to your inbox weekly.
         </p>
       </div>
-      <form class="newsletter-form ms-auto d-flex align-items-center gap-2">
+      <form
+        class="newsletter-form ms-0 ms-lg-auto d-flex align-items-center gap-2"
+      >
         <input
           type="text"
           placeholder="Your email address"
@@ -63,5 +67,11 @@ form > button {
 form > button:hover {
   background-color: #fff;
   color: var(--color-primary);
+}
+
+@media (max-width: 992px) {
+  .newsletter-text h4 {
+    text-align: center;
+  }
 }
 </style>

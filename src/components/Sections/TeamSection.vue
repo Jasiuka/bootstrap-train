@@ -15,7 +15,7 @@
         <div
           v-for="(member, index) in teamData"
           :key="index"
-          class="col-md-6 mb-md-3 mb-lg-0 col-lg-4 jump-in-element"
+          class="col-md-6 mb-4 mb-lg-0 col-lg-4 jump-in-element"
           :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
         >
           <team-card

@@ -3,7 +3,7 @@
     <div
       class="container-lg d-flex align-items-center h-100 flex-column flex-lg-row"
     >
-      <div class="row">
+      <div class="row pt-5 pt-lg-0">
         <div class="col pe-5 d-flex flex-column gap-4 hero-content">
           <h1 class="text-secondary heading">
             A Powerful App For Your Business.

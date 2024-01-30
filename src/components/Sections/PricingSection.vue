@@ -9,7 +9,7 @@
     <template #sectionBody>
       <div class="row container-lg">
         <div
-          class="col-md-6 mb-md-3 mb-lg-0 col-sm-12 col-lg jump-in-element"
+          class="col-md-6 mb-4 mb-lg-0 col-sm-12 col-lg jump-in-element"
           :style="{ opacity: 0, 'animation-delay': `0.${index}s` }"
           v-for="(card, index) in pricingData"
           :key="index"
